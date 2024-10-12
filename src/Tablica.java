@@ -47,10 +47,9 @@ public class Tablica {
         int max2 = tablica.get(0);
         for (int i = 0; i < n; i++) {
             if (max < tablica.get(i)){
-                max2 = max;
                 max = tablica.get(i);
             }
-            if (max2 >= max && max2 > tablica.get(i)) {
+            if (max2 >= max && max2 < tablica.get(i)) {
                 max2 = tablica.get(i);
             }
         }
