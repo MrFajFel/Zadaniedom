@@ -10,49 +10,62 @@ public class Tablica {
         this.n = n;
     }
 
-    public void wypelnij(int a,int b){
+    public void wypelnij(int a, int b){
         Random rand = new Random();
         for (int i = 0; i < n; i++) {
-            int losowanie = rand.nextInt(a,(b+1));
-            System.out.println(losowanie);
+            int losowanie = rand.nextInt(a, (b + 1));
             tablica.add(losowanie);
+            System.out.println(losowanie);
+
         }
     }
 
 
-    public void maksimum(){
+    public int maksimum(){
         int max = tablica.get(0);
         for (int i = 0; i < n; i++) {
             if (max < tablica.get(i)){
                 max = tablica.get(i);
             }
         }
-        System.out.println(max);
+        return max;
     }
 
-    public void minimum(){
+    public int minimum(){
         int min = tablica.get(0);
         for (int i = 0; i < n; i++) {
             if (min > tablica.get(i)){
                 min = tablica.get(i);
             }
         }
-        System.out.println(min);
+        return min;
     }
 
 
-    public void maksimum2(){
+    public int maksimum2(){
         int max = tablica.get(0);
         int max2 = tablica.get(0);
         for (int i = 0; i < n; i++) {
             if (max < tablica.get(i)){
+                max2 = max;
                 max = tablica.get(i);
             }
+            if (max2 >= max && max2 > tablica.get(i)) {
+                max2 = tablica.get(i);
+            }
         }
-        System.out.println(max);
+        return max2;
     }
 
-
+    public int znajdz(int a){
+        for (int i = 0; i < n; i++) {
+            if (tablica.get(i) == a){
+                a = tablica.get(i);
+                return a;
+            }
+        }
+        return -1;
+    }
 
 
 }
